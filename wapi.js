@@ -1,7 +1,7 @@
 var apiKey = "21f119b277dc1287bf9bd8d85a0a56ab";
 var curCity = "";
 
-// this includes UV index. Though does not work with cities. Second Call 
+
 function getCompleteWeatherApiUrlForCoord(lat, lon){
     return "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial" +"&appid=" + apiKey;
 }
@@ -81,8 +81,6 @@ function populateWeather(jsonWeather){
     $("#wind").text("Wind: " + jsonWeather.current.wind_speed);
     $("#uvIndex").text("UV Index: " + jsonWeather.current.uvi);
 
-        //  populate forecast weather
-
     var jsonDaily = jsonWeather.daily;
 
     var dateElements = $('.date');
@@ -123,7 +121,6 @@ function populateDates(){
     var todDate = new Date();
 
     $('#cityAndDate').text(" - (" + getMmDdYyFromDate(todDate) + ")");
-        // forecast dates
 
     var dateElements = $('.date');
 
